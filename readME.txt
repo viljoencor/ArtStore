@@ -32,6 +32,10 @@ Creating orders from the shopping basket
 Accepting payments via Stripe using the new EU standards for 3D secure
 Publishing the application to Linux
 
+git add .
+git commit -m "End of Section 5"
+git push origin master
+
 
 Create a folder for project
 In the colder at the directory path, type cmd

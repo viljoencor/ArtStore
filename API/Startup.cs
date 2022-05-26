@@ -39,15 +39,13 @@ namespace API
             //     return ConnectionMultiplexer.Connect(configuration);
             // });
 
-            services.AddSwaggerGen(c =>{c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });});
-
-            // services.AddCors(opt =>
-            // {
-            //     opt.AddPolicy("CorsPolicy", policy =>
-            //     {
-            //         policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-            //     });
-            // });
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,15 +63,12 @@ namespace API
             //     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Content")), RequestPath = "/content"
             // });
 
-            //app.UseCors("CorsPolicy");
-
+            app.UseCors("CorsPolicy");
             app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-               // endpoints.MapFallbackToController("Index", "Fallback");
+            app.UseEndpoints(endpoints =>{endpoints.MapControllers();
+               //endpoints.MapFallbackToController("Index", "Fallback");
             });           
         }
     }
