@@ -33,9 +33,17 @@ Accepting payments via Stripe using the new EU standards for 3D secure
 Publishing the application to Linux
 
 git add .
-git commit -m "End of Section 5"
+git commit -m "End of Section 6"
 git push origin master
 
+npm install -g @angular/cli
+npm install -g npm@8.11.0
+ng new client --strict false
+ng serve
+
+npm install ngx-bootstrap
+npm install bootstrap@5.1.3
+npm install font-awesome
 
 Create a folder for project
 In the colder at the directory path, type cmd
