@@ -72,19 +72,19 @@ export class ShopService {
     return this.shopParams;
   }
 
-  // getProduct(id: number) {
-  //   let product: IProduct;
-  //   this.productCache.forEach((products: IProduct[]) => {
-  //     console.log(product);
-  //     product = products.find(p => p.id === id);
-  //   })
+  getProduct(id: number) {
+    // let product: IProduct;
+    // this.productCache.forEach((products: IProduct[]) => {
+    //   console.log(product);
+    //   product = products.find(p => p.id === id);
+    // })
 
-  //   if (product) {
-  //     return of(product);
-  //   }
+    // if (product) {
+    //   return of(product);
+    // }
 
-  //   return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
-  // }
+    return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
+  }
 
   getBrands() {
     if (this.brands.length > 0) {
