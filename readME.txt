@@ -45,6 +45,11 @@ npm install ngx-bootstrap
 npm install bootstrap@5.1.3
 npm install font-awesome
 
+
+cd src/app
+ng g c nav-bar --skip-tests
+cd src/app/shared/components
+
 Create a folder for project
 In the colder at the directory path, type cmd
 It will open a command propmt then type: code .
