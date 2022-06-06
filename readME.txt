@@ -33,7 +33,7 @@ Accepting payments via Stripe using the new EU standards for 3D secure
 Publishing the application to Linux
 
 git add .
-git commit -m "End of Section 9"
+git commit -m "Error handeling"
 git push origin master
 
 npm install -g @angular/cli
@@ -50,6 +50,8 @@ cd src/app
 ng g c not-found --skip-tests --flat
 cd src/app/shared/components
 ng g interceptor loading --skip-tests
+xng-breadcrumb
+
 
 Create a folder for project
 In the colder at the directory path, type cmd
@@ -60,6 +62,7 @@ Install C# Extentions
 Install NuGet Gallery
 Install SQLite
 Install NodeJS
+npm install --save xng-breadcrumb
 
 dotnet tool install --global dotnet-ef --version 6.0.5
 dotnet ef migrations add InitialCreate -o Data/Migrations

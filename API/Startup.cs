@@ -1,10 +1,17 @@
+using System.IO;
 using API.Extensions;
 using API.Helpers;
 using API.Middleware;
-using Core.Interfaces;
 using Infrastructure.Data;
+//using Infrastructure.Identity;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using StackExchange.Redis;
+using Core.Interfaces;
 
 namespace API
 {
@@ -33,11 +40,11 @@ namespace API
             //     x.UseNpgsql(_config.GetConnectionString("IdentityConnection"));
             // });
 
-            // services.AddSingleton<IConnectionMultiplexer>(c =>
-            // {
-            //     var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
-            //     return ConnectionMultiplexer.Connect(configuration);
-            // });
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
 
             services.AddCors(opt =>
             {
