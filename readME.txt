@@ -47,7 +47,7 @@ npm install font-awesome
 
 
 cd src/app
-ng g c not-found --skip-tests --flat
+ng g c checkout --flat --skip-tests
 cd src/app/shared/components
 ng g interceptor loading --skip-tests
 xng-breadcrumb
